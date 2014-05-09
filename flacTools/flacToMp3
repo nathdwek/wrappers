@@ -1,0 +1,2 @@
+#!/bin/bash
+for f in ./*.flac; do avconv -i "$f" -ab 320k "${f%.*}.mp3"; done
