@@ -1,0 +1,7 @@
+#!/bin/bash
+realTmp=$(mktemp -d --tmpdir=/tmp/ intermediateResample.XXX)
+d=$(mktemp -d --tmpdir=$HOME/Bureau/ flac24Alac.XXX)
+for f in *.flac;
+   do sox "$f" -r 44100 -b 16 "$realTmp/$f";
+   avconv -v warning -analyzeduration 100000000 -i "$realTmp/$f" -c:a alac "$d/${f%.*}.m4a";
+done
