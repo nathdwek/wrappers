@@ -1,3 +1,0 @@
-#!/bin/bash
-d=$(mktemp -d --tmpdir=$HOME/Bureau/ flacResample.XXX)
-for flac in *.flac; do sox "${flac}" -r 44100 -b 16 "$d/${flac}"; done
