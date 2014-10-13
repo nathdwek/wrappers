@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+name=$1
+fullFrequency=$2
+origDir=$3
+backupUrl=$4
+
+date >> /home/nathdwek/backupLogs/"$name"Times.log;
+
+duplicity --no-encryption --name "$name" --full-if-older-than "$fullFrequency" "$origDir" "$backupUrl" > /home/nathdwek/backupLogs/"$name".log;
+
+duplicity remove-all-but-n-full 1 --force "$backupUrl" >> /home/nathdwek/backupLogs/"$name".log;
+
+echo "Good" >>  /home/nathdwek/backupLogs/"$name"Times.log;
+
+
