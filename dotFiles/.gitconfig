@@ -1,0 +1,27 @@
+[color]
+   ui = auto
+[merge]
+   tool = extMerge
+[mergetool "extMerge"]
+   cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+   trustExitCode = false
+[diff]
+	tool = meld
+[alias]
+   tree = log --graph --all --decorate --oneline
+   rmc = rm --cached
+[core]
+   editor = vim
+[format]
+   pretty ="%C(yellow)%ar%Creset %C(white bold)%h%Creset %C(bold)%s%Creset %C(yellow bold)%an%Creset"
+[push]
+   default = upstream
+[log]
+   date = relative
+[user]
+[color "diff"]
+   new = white green bold
+   old = white red bold
+[color "status"]
+	untracked = red
