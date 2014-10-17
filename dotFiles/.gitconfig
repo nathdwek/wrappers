@@ -7,7 +7,7 @@
 [mergetool]
    trustExitCode = false
 [diff]
-	tool = meld
+   tool = meld
 [alias]
    tree = log --graph --all --decorate --oneline
    rmc = rm --cached
@@ -19,9 +19,6 @@
    default = upstream
 [log]
    date = relative
-[user]
 [color "diff"]
    new = white green bold
    old = white red bold
-[color "status"]
-	untracked = red
