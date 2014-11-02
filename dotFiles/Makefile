@@ -1,11 +1,13 @@
-DOTFILES=
-DOTFILES+=.gitconfig
-DOTFILES+=.bashrc
-DOTFILES+=.profile
-DOTFILES+=.dircolors
-DOTFILES+=.Xmodmap
+DOTFILES_644=
+DOTFILES_755=
+DOTFILES_644+=.gitconfig
+DOTFILES_755+=.bashrc
+DOTFILES_755+=.profile
+DOTFILES_644+=.dircolors
+DOTFILES_644+=.Xmodmap
 
 INSTALL = install
 
 install: 
-	$(INSTALL) -m 755 $(DOTFILES) $(HOME)
+	$(INSTALL) -m 755 $(DOTFILES_755) $(HOME)
+	$(INSTALL) -m 644 $(DOTFILES_644) $(HOME)
