@@ -2,7 +2,6 @@ DOTFILES_644=
 DOTFILES_755=
 DOTFILES_644+=.gitconfig
 DOTFILES_755+=.bashrc
-DOTFILES_755+=.profile
 DOTFILES_644+=.dircolors
 DOTFILES_644+=.Xmodmap
 
