@@ -11,7 +11,7 @@ GIT_TOOLS=extDiff extMerge
 DATA_TOOLS=myDUp myMountDup
 
 INSTALL = install
-INSTALL_DIR=/tmp
+INSTALL_DIR=$(HOME)
 BIN_DIR=$(INSTALL_DIR)/bin/
 
 all: install-config install-writing install-multimedia install-gitTools install-dataTools
