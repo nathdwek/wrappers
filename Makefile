@@ -8,7 +8,7 @@ WRITING=
 WRITING+=doiToBib
 MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3
 GIT_TOOLS=extDiff extMerge
-DATA_TOOLS=myDUp myMountDup
+DATA_TOOLS=myDup myMountDup
 
 INSTALL = install
 INSTALL_DIR=$(HOME)
@@ -17,8 +17,8 @@ BIN_DIR=$(INSTALL_DIR)/bin/
 all: install-config install-writing install-multimedia install-gitTools install-dataTools
 
 install-config: 
-	$(INSTALL) -m 755 $(addprefix dotfiles/, $(DOTFILES_755)) $(INSTALL_DIR)
-	$(INSTALL) -m 644 $(addprefix dotfiles/, $(DOTFILES_644)) $(INSTALL_DIR)
+	$(INSTALL) -m 755 $(addprefix dotFiles/, $(DOTFILES_755)) $(INSTALL_DIR)
+	$(INSTALL) -m 644 $(addprefix dotFiles/, $(DOTFILES_644)) $(INSTALL_DIR)
 
 install-writing:
 	$(INSTALL) -m 755 $(addprefix writing/, $(WRITING)) $(BIN_DIR)
