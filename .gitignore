@@ -1,2 +1,4 @@
 private/
 .directory
+#vim
+*.swp
