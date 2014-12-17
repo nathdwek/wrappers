@@ -15,7 +15,7 @@ mount UUID="$deviceUUID" "$mountPoint" -o defaults > /home/nathdwek/backupLogs/"
 
 duplicity --no-encryption --name "$name" --full-if-older-than "$fullFrequency" "$origDir" file://"$mountPoint"/"$backupDir_RelToMountPoint" >> /home/nathdwek/backupLogs/"$name".log;
 
-duplicity remove-all-but-n-full 1 --force file://"$mountPoint"/"$backupDir_RelToMountPoint" >> /home/nathdwek/backupLogs/"$name".log;
+duplicity remove-all-inc-of-but-n-full 1 --force file://"$mountPoint"/"$backupDir_RelToMountPoint" >> /home/nathdwek/backupLogs/"$name".log;
 
 umount $mountPoint >> /home/nathdwek/backupLogs/"$name".log;
 
