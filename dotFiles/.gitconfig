@@ -11,6 +11,9 @@
 [alias]
    tree = log --graph --all --decorate --oneline
    rmc = rm --cached
+   c = commit -S -m
+   ca = commit -S -am
+   s = status
 [core]
    editor = vim
 [format]
