@@ -11,7 +11,7 @@ date >> /home/nathdwek/backupLogs/"$name"Times.log;
 
 duplicity --no-encryption --name "$name" --full-if-older-than "$fullFrequency" "$origDir" "$backupUrl" > /home/nathdwek/backupLogs/"$name".log;
 
-duplicity remove-all-inc-of-but-n-full 1 --force "$backupUrl" >> /home/nathdwek/backupLogs/"$name".log;
+duplicity remove-all-inc-of-but-n-full 2 --force "$backupUrl" >> /home/nathdwek/backupLogs/"$name".log;
 
 echo "Good" >>  /home/nathdwek/backupLogs/"$name"Times.log;
 
