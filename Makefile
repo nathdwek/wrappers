@@ -8,13 +8,17 @@ WRITING=
 WRITING+=doiToBib
 MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3
 GIT_TOOLS=extDiff extMerge
-DATA_TOOLS=myDup myMountDup
+BACKUP_SCRIPTS=myDup myMountDup myMountOnlyIncDup
 
 INSTALL = install
 INSTALL_DIR=$(HOME)
 BIN_DIR=$(INSTALL_DIR)/bin/
 
-all: install-config install-writing install-multimedia install-gitTools install-dataTools
+default:
+	echo "This can amongst other things overwrite some of your config files, and will write in your HOMEDIR and your BINDIR."
+	echo "Nothing done. You can do make all if you know what you're doing." 
+
+all: install-config install-writing install-multimedia install-gitTools install-backup
 
 install-config: 
 	$(INSTALL) -m 755 $(addprefix dotFiles/, $(DOTFILES_755)) $(INSTALL_DIR)
@@ -27,7 +31,7 @@ install-multimedia:
 	$(INSTALL) -m 755 $(addprefix multimedia/, $(MULTIMEDIA)) $(BIN_DIR)
 
 install-gitTools:
-	$(INSTALL) -m 755 $(addprefix gitTools/, $(GIT_TOOLS)) $(BIN_DIR)
+	$(INSTALL) -m 755 $(addprefix git-stuff/, $(GIT_TOOLS)) $(BIN_DIR)
 
-install-dataTools:
-	$(INSTALL) -m 755 $(addprefix dataTools/, $(DATA_TOOLS)) $(BIN_DIR)
+install-backup:
+	$(INSTALL) -m 755 $(addprefix backupScripts/, $(BACKUP_SCRIPTS)) $(BIN_DIR)
