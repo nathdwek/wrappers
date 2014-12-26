@@ -3,10 +3,10 @@
 set -e
 
 name=$1
-origDir=$3
-deviceUUID=$4
-mountPoint=$5
-backupDir_RelToMountPoint=$6
+origDir=$2
+deviceUUID=$3
+mountPoint=$4
+backupDir_RelToMountPoint=$5
 
 date >> /home/nathdwek/backupLogs/"$name"Times.log;
 
