@@ -11,6 +11,8 @@
    ca = commit -S -am
    s = status
    a = add
+   d = diff
+   dc = diff --color-words
 [core]
    editor = vim
 [format]
