@@ -7,7 +7,7 @@ DOTFILES_644+=.dircolors
 DOTFILES_644+=.Xmodmap
 WRITING=
 WRITING+=doiToBib
-MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3
+MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3 hqFlacToItunes
 BACKUP_SCRIPTS=myDup myMountDup myMountOnlyIncDup
 
 INSTALL = install
