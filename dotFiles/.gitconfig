@@ -25,3 +25,5 @@
 [color "diff"]
    new = white green bold
    old = white red bold
+[tar]
+   txz = "xz -c"
