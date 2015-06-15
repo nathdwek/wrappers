@@ -9,10 +9,12 @@ WRITING=
 WRITING+=doiToBib
 MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3 hqFlacToItunes
 BACKUP_SCRIPTS=myDup myMountDup myMountOnlyIncDup
+DOTFILES_BEETS=config.yaml
 
 INSTALL = install
 INSTALL_DIR=$(HOME)
 BIN_DIR=$(INSTALL_DIR)/bin/
+BEETSDIR=$(INSTALL_DIR)/.config/beets/
 
 default:
 	echo "This can amongst other things overwrite some of your config files, and will write in your HOMEDIR and your BINDIR."
@@ -23,6 +25,7 @@ all: install-config install-writing install-multimedia install-backup
 install-config: 
 	$(INSTALL) -m 755 $(addprefix dotFiles/, $(DOTFILES_755)) $(INSTALL_DIR)
 	$(INSTALL) -m 644 $(addprefix dotFiles/, $(DOTFILES_644)) $(INSTALL_DIR)
+	$(INSTALL) -m 644 $(addprefix dotFiles/beets/, $(DOTFILES_BEETS)) $(BEETSDIR)
 
 install-writing:
 	$(INSTALL) -m 755 $(addprefix writing/, $(WRITING)) $(BIN_DIR)

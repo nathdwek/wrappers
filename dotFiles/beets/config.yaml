@@ -1,0 +1,23 @@
+directory: ~/storage/Musique/beets
+library: ~/storage/Musique/.beetslibrary.blb
+
+import:
+    move: yes
+
+plugins:
+    missing duplicates fetchart embedart zero convert
+
+fetchart:
+    enforce_ratio: yes
+
+zero:
+    fields: albumartist_sort artist_sort comments genre
+
+convert:
+    dest: ~/storage/Musique/FFOutput
+    format: ipod
+    formats:
+        ipod:
+            command: avconv -v warning -analyzeduration 100000000 -i $source -vn -c:a alac -ar 48000 -sample_fmt s16p $dest
+            extension: m4a
+
