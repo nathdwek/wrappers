@@ -20,4 +20,4 @@ install-multimedia:
 	$(INSTALL) -m 755 $(addprefix multimedia/, $(MULTIMEDIA)) $(BIN_DIR)
 
 install-backup:
-	$(INSTALL) -m 755 $(addprefix backupScripts/, $(BACKUP)) $(BIN_DIR)
+	$(INSTALL) -m 755 $(addprefix backup/, $(BACKUP)) $(BIN_DIR)
