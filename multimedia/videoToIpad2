@@ -1,0 +1,2 @@
+#This snippet should not be +x. Just a reminder not an actual command.
+avconv -i <fileIn> -vcodec libx264 -acodec aac -strict experimental -filter:v scale=1024:-1 -o <fileOut>
