@@ -1,0 +1,5 @@
+#!/bin/sh
+
+MATLABROOT=""$HOME"/opt/matlab/R2012b";
+
+"$MATLABROOT"/bin/matlab -desktop;
