@@ -2,6 +2,7 @@ WRITING=
 WRITING+=doiToBib
 MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3 hqFlacToItunes
 BACKUP=myDup myMountDup myMountOnlyIncDup
+PURESHELL=ds
 
 INSTALL=install
 INSTALL_DIR=$(HOME)
@@ -11,7 +12,7 @@ default:
 	echo "This will write in your HOMEDIR and your BINDIR."
 	echo "Nothing done. You can do make all if you know what you're doing."
 
-all: install-writing install-multimedia install-backup
+all: install-writing install-multimedia install-backup install-pureshell
 
 install-writing:
 	$(INSTALL) -m 755 $(addprefix writing/, $(WRITING)) $(BIN_DIR)
@@ -21,3 +22,6 @@ install-multimedia:
 
 install-backup:
 	$(INSTALL) -m 755 $(addprefix backup/, $(BACKUP)) $(BIN_DIR)
+
+install-pureshell:
+	$(INSTALL) -m 755 $(addprefix pureshell/, $(PURESHELL)) $(BIN_DIR)
