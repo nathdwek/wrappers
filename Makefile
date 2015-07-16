@@ -10,11 +10,16 @@ BIN_DIR=$(INSTALL_DIR)/bin/
 BACKUPLOGS_DIR=$(HOME)/backupLogs/
 BUILD_DIR = build/
 
-default:
-	echo "This will write in your HOMEDIR and your BINDIR."
-	echo "Nothing done. You can do make all if you know what you're doing."
+.PHONY: default install init install-writing install-multimedia install-backup install-pureshell init-pureshell
 
-all: install-writing install-multimedia install-backup install-pureshell
+default:
+	$(info "This will write in your HOMEDIR and your BINDIR.")
+	$(info "Nothing done.")
+	$(info "You can do make init; make install; if you know what you're doing.")
+
+install: install-writing install-multimedia install-backup install-pureshell
+
+init: init-backup
 
 install-writing:
 	$(INSTALL) -m 755 $(addprefix writing/, $(WRITING)) $(BIN_DIR)
