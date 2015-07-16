@@ -1,4 +1,4 @@
-private/
+build/
 .directory
 #vim
 *.swp

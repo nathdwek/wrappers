@@ -9,16 +9,16 @@ deviceUUID=$4
 mountPoint=$5
 backupDir_RelToMountPoint=$6
 
-date >> /home/nathdwek/backupLogs/"$name"Times.log;
+date >> backupLogsDir__/"$name"Times.log;
 
-mount UUID="$deviceUUID" "$mountPoint" -o defaults > /home/nathdwek/backupLogs/"$name".log;
+mount UUID="$deviceUUID" "$mountPoint" -o defaults > backupLogsDir__/"$name".log;
 
-duplicity --no-encryption --name "$name" --full-if-older-than "$fullFrequency" "$origDir" file://"$mountPoint"/"$backupDir_RelToMountPoint" >> /home/nathdwek/backupLogs/"$name".log;
+duplicity --no-encryption --name "$name" --full-if-older-than "$fullFrequency" "$origDir" file://"$mountPoint"/"$backupDir_RelToMountPoint" >> backupLogsDir__/"$name".log;
 
-duplicity remove-all-inc-of-but-n-full 2 --force file://"$mountPoint"/"$backupDir_RelToMountPoint" >> /home/nathdwek/backupLogs/"$name".log;
+duplicity remove-all-inc-of-but-n-full 2 --force file://"$mountPoint"/"$backupDir_RelToMountPoint" >> backupLogsDir__/"$name".log;
 
-umount $mountPoint >> /home/nathdwek/backupLogs/"$name".log;
+umount $mountPoint >> backupLogsDir__/"$name".log;
 
-echo "Good" >>  /home/nathdwek/backupLogs/"$name"Times.log;
+echo "Good" >>  backupLogsDir__/"$name"Times.log;
 
 
