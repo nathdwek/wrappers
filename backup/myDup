@@ -13,6 +13,6 @@ duplicity --no-encryption --name "$name" --full-if-older-than "$fullFrequency" "
 
 duplicity remove-all-inc-of-but-n-full 2 --force "$backupUrl" >> backupLogsDir__/"$name".log;
 
-echo "Good" >>  backupLogsDir__/"$name"Times.log;
+echo "reached end" >>  backupLogsDir__/"$name"Times.log;
 
 

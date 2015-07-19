@@ -19,6 +19,4 @@ duplicity remove-all-inc-of-but-n-full 2 --force file://"$mountPoint"/"$backupDi
 
 umount $mountPoint >> backupLogsDir__/"$name".log;
 
-echo "Good" >>  backupLogsDir__/"$name"Times.log;
-
-
+echo "reached end" >>  backupLogsDir__/"$name"Times.log;

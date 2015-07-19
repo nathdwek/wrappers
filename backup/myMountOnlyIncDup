@@ -16,6 +16,4 @@ duplicity --no-encryption --name "$name" "$origDir" file://"$mountPoint"/"$backu
 
 umount $mountPoint >> backupLogsDir__/"$name".log;
 
-echo "reached End" >>  backupLogsDir__/"$name"Times.log;
-
-
+echo "reached end" >>  backupLogsDir__/"$name"Times.log;
