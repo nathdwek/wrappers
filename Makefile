@@ -3,12 +3,15 @@ WRITING+=doiToBib
 MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3 hqFlacToItunes
 BACKUP=myDup myMountDup myMountOnlyIncDup
 PURESHELL=ds
+SCIENCE=matlab-display
+SCIENCE_DESKTOP=matlab.desktop
 
 INSTALL=install
 INSTALL_DIR=$(HOME)
 BIN_DIR=$(INSTALL_DIR)/bin/
 BACKUPLOGS_DIR=$(HOME)/backupLogs/
 BUILD_DIR = build/
+DESKTOP = $(HOME)/Desktop
 
 .PHONY: default install init install-writing install-multimedia install-backup install-pureshell init-pureshell
 
@@ -17,7 +20,7 @@ default:
 	$(info "Nothing done.")
 	$(info "You can do make init; make install; if you know what you're doing.")
 
-install: install-writing install-multimedia install-backup install-pureshell
+install: install-writing install-multimedia install-backup install-pureshell install-science
 
 init: init-backup
 
@@ -32,6 +35,10 @@ install-backup:
 
 install-pureshell:
 	$(INSTALL) -m 755 $(addprefix pureshell/, $(PURESHELL)) $(BIN_DIR)
+
+install-science:
+	$(INSTALL) -m 755 $(addprefix science/, $(SCIENCE)) $(BIN_DIR)
+	$(INSTALL) -m 755 $(addprefix science/, $(SCIENCE_DESKTOP)) $(DESKTOP)
 
 init-backup:
 	$(INSTALL) -d $(BUILD_DIR)/backup
