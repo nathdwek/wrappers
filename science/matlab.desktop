@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/nathdwek/opt/wrappers/science/matlab-logo.svg
+Name=MATLAB r2012b
+Comment=Start MATLAB - The Language of Technical Computing
+Exec=matlab-display
+Categories=Development;
