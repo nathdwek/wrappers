@@ -1,5 +1,4 @@
-WRITING=
-WRITING+=doiToBib
+WRITING=doiToBib notws
 MULTIMEDIA=flacToAlac cueFlacSplit flacToItunes flacToMp3 hqFlacToItunes
 BACKUP=myDup myMountDup myMountOnlyIncDup
 PURESHELL=ds
