@@ -1,1 +1,1 @@
-sed -i 's/[ \t]*$//' "$1"
+for f in $@; do sed -i 's/[ \t]*$//' "$f"; done;
