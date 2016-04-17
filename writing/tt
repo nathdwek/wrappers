@@ -1,0 +1,4 @@
+#!/bin/bash
+
+line=$1;shift;
+for f in $@; do head -n 1 $f|grep -q -F "$line" || sed -i '1i'"$line"'\' $f; done;
